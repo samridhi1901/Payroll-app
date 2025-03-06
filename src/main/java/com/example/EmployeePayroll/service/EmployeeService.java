@@ -12,12 +12,8 @@ import java.util.Optional;
 @Service
 public class EmployeeService {
 
-    private final EmployeeRepo employeeRepository;
-
     @Autowired
-    public EmployeeService(EmployeeRepo employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
+    private EmployeeRepo employeeRepository;
 
     public List<EmployeeModel> getAllUsers() {
         return employeeRepository.findAll();
@@ -28,7 +24,8 @@ public class EmployeeService {
     }
 
     public EmployeeModel createUser(EmployeeDTO employeeDTO) {
-        return employeeRepository.save(new EmployeeModel(employeeDTO));
+        EmployeeModel employee = new EmployeeModel(employeeDTO);  // Using constructor
+        return employeeRepository.save(employee);
     }
 
     public Optional<EmployeeModel> updateUser(Long id, EmployeeDTO userDetails) {
