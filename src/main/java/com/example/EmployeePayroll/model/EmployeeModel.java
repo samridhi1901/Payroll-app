@@ -15,31 +15,34 @@ public class EmployeeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
-    @Min(value = 1000, message = "Salary must be at least 1000")
     private double salary;
 
-    // Constructor to initialize from DTO
     public EmployeeModel(EmployeeDTO employeeDTO) {
         this.name = employeeDTO.getName();
         this.salary = employeeDTO.getSalary();
     }
 
+    public Long getId() {  // ✅ Added this method
+        return id;
+    }
 
-public  String getName(){
+    public String getName() {
         return name;
     }
-    public double getsalary(){
+
+    public double getSalary() {
         return salary;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    public void setSalary(@Min(value = 1000, message = "Salary must be at least 1000") double salary)
-    {
-        this.salary = salary;
 
+    public void setSalary(@Min(value = 1000, message = "Salary must be at least 1000") double salary) {
+        this.salary = salary;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
 }
