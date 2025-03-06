@@ -1,5 +1,7 @@
 package com.example.EmployeePayroll.model;
+import com.example.EmployeePayroll.dto.EmployeeDTO;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import lombok.*;
 
 import lombok.AllArgsConstructor;
@@ -18,24 +20,28 @@ public class EmployeeModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String email;
-    public EmployeeModel(String name, String email){
-        this.name = name;
-        this.email = email;
+    private double salary;
+
+    public EmployeeModel(EmployeeDTO employeeDTO) {
+        this.name = employeeDTO.getName();
+        this.salary = employeeDTO.getSalary();
     }
     public  String getName(){
         return name;
     }
-    public String getEmail(){
-        return email;
+    public double getsalary(){
+        return salary;
     }
     public void setName(String name){
         this.name = name;
     }
 
-    public void setEmail(String email){
-        this.email = email;
+
+
+
+    public void setSalary(@Min(value = 1000, message = "Salary must be at least 1000") double salary)
+    {
+        this.salary = salary;
+
     }
-
-
 }
