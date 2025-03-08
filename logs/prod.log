@@ -110,3 +110,79 @@
 2025-03-08 14:18:07 [SpringApplicationShutdownHook] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-08 14:18:07 [SpringApplicationShutdownHook] INFO  - HikariPool-1 - Shutdown initiated...
 2025-03-08 14:18:07 [SpringApplicationShutdownHook] INFO  - HikariPool-1 - Shutdown completed.
+2025-03-08 14:34:25 [restartedMain] INFO  - Starting EmployeePayrollApplication using Java 21.0.6 with PID 4604 (C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp\target\classes started by HP in C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp)
+2025-03-08 14:34:25 [restartedMain] INFO  - The following 1 profile is active: "prod"
+2025-03-08 14:34:26 [restartedMain] INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-08 14:34:26 [restartedMain] INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-08 14:34:28 [restartedMain] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-08 14:34:28 [restartedMain] INFO  - Finished Spring Data repository scanning in 192 ms. Found 1 JPA repository interface.
+2025-03-08 14:34:31 [restartedMain] INFO  - Tomcat initialized with port 8080 (http)
+2025-03-08 14:34:31 [restartedMain] INFO  - Starting service [Tomcat]
+2025-03-08 14:34:31 [restartedMain] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-08 14:34:31 [restartedMain] INFO  - Initializing Spring embedded WebApplicationContext
+2025-03-08 14:34:31 [restartedMain] INFO  - Root WebApplicationContext: initialization completed in 5555 ms
+2025-03-08 14:34:32 [restartedMain] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-08 14:34:32 [restartedMain] INFO  - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-08 14:34:32 [restartedMain] INFO  - HHH000026: Second-level cache disabled
+2025-03-08 14:34:33 [restartedMain] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-08 14:34:33 [restartedMain] INFO  - HikariPool-1 - Starting...
+2025-03-08 14:34:34 [restartedMain] INFO  - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ff91710
+2025-03-08 14:34:34 [restartedMain] INFO  - HikariPool-1 - Start completed.
+2025-03-08 14:34:34 [restartedMain] INFO  - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.31
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-08 14:34:36 [restartedMain] INFO  - HHH000182: No default (no-argument) constructor for class: com.example.EmployeePayroll.model.EmployeeModel (class must be instantiated by Interceptor)
+2025-03-08 14:34:36 [restartedMain] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-08 14:34:37 [restartedMain] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-08 14:34:38 [restartedMain] INFO  - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/employee_db'
+2025-03-08 14:34:38 [restartedMain] INFO  - LiveReload server is running on port 35729
+2025-03-08 14:34:38 [restartedMain] INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-03-08 14:34:38 [restartedMain] INFO  - Started EmployeePayrollApplication in 14.768 seconds (process running for 16.611)
+2025-03-08 14:40:51 [SpringApplicationShutdownHook] INFO  - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-08 14:40:52 [tomcat-shutdown] INFO  - Graceful shutdown complete
+2025-03-08 14:40:52 [SpringApplicationShutdownHook] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-08 14:40:52 [SpringApplicationShutdownHook] INFO  - HikariPool-1 - Shutdown initiated...
+2025-03-08 14:40:52 [SpringApplicationShutdownHook] INFO  - HikariPool-1 - Shutdown completed.
+2025-03-08 14:42:58 [restartedMain] INFO  - Starting EmployeePayrollApplication using Java 21.0.6 with PID 15548 (C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp\target\classes started by HP in C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp)
+2025-03-08 14:42:58 [restartedMain] INFO  - The following 1 profile is active: "prod"
+2025-03-08 14:42:58 [restartedMain] INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-08 14:42:58 [restartedMain] INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-08 14:43:01 [restartedMain] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-08 14:43:01 [restartedMain] INFO  - Finished Spring Data repository scanning in 168 ms. Found 1 JPA repository interface.
+2025-03-08 14:43:03 [restartedMain] INFO  - Tomcat initialized with port 8080 (http)
+2025-03-08 14:43:03 [restartedMain] INFO  - Starting service [Tomcat]
+2025-03-08 14:43:03 [restartedMain] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-08 14:43:03 [restartedMain] INFO  - Initializing Spring embedded WebApplicationContext
+2025-03-08 14:43:03 [restartedMain] INFO  - Root WebApplicationContext: initialization completed in 4643 ms
+2025-03-08 14:43:03 [restartedMain] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-08 14:43:03 [restartedMain] INFO  - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-08 14:43:04 [restartedMain] INFO  - HHH000026: Second-level cache disabled
+2025-03-08 14:43:04 [restartedMain] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-08 14:43:04 [restartedMain] INFO  - HikariPool-1 - Starting...
+2025-03-08 14:43:06 [restartedMain] INFO  - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45042857
+2025-03-08 14:43:06 [restartedMain] INFO  - HikariPool-1 - Start completed.
+2025-03-08 14:43:06 [restartedMain] INFO  - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.31
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-08 14:43:08 [restartedMain] INFO  - HHH000182: No default (no-argument) constructor for class: com.example.EmployeePayroll.model.EmployeeModel (class must be instantiated by Interceptor)
+2025-03-08 14:43:08 [restartedMain] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-08 14:43:08 [restartedMain] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-08 14:43:09 [restartedMain] INFO  - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/employee_db'
+2025-03-08 14:43:10 [restartedMain] INFO  - LiveReload server is running on port 35729
+2025-03-08 14:43:10 [restartedMain] INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-03-08 14:43:10 [restartedMain] INFO  - Started EmployeePayrollApplication in 13.286 seconds (process running for 15.062)
+2025-03-08 14:44:19 [SpringApplicationShutdownHook] INFO  - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-08 14:44:19 [tomcat-shutdown] INFO  - Graceful shutdown complete
+2025-03-08 14:44:19 [SpringApplicationShutdownHook] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-08 14:44:19 [SpringApplicationShutdownHook] INFO  - HikariPool-1 - Shutdown initiated...
+2025-03-08 14:44:20 [SpringApplicationShutdownHook] INFO  - HikariPool-1 - Shutdown completed.

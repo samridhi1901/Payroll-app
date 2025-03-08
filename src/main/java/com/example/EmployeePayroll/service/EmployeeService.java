@@ -1,15 +1,17 @@
 package com.example.EmployeePayroll.service;
 
 import com.example.EmployeePayroll.dto.EmployeeDTO;
+import com.example.EmployeePayroll.exception.EmployeeNotFoundException;
 import com.example.EmployeePayroll.model.EmployeeModel;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class EmployeeService {
@@ -25,11 +27,12 @@ public class EmployeeService {
     }
 
     // Get employee by ID
-    public Optional<EmployeeModel> getUserById(Long id) {
+    public EmployeeModel getUserById(Long id) {
         log.info("Fetching employee with ID: {}", id);
         return employeeList.stream()
                 .filter(employee -> employee.getId().equals(id))
-                .findFirst();
+                .findFirst()
+                .orElseThrow(() -> new EmployeeNotFoundException("Employee with ID " + id + " not found"));
     }
 
     // Create employee using DTO
@@ -41,19 +44,20 @@ public class EmployeeService {
     }
 
     // Update employee using DTO
-    public Optional<EmployeeModel> updateUser(Long id, EmployeeDTO employeeDTO) {
+    public EmployeeModel updateUser(Long id, EmployeeDTO employeeDTO) {
         log.info("Updating employee with ID: {}", id);
-        return getUserById(id).map(employee -> {
-            employee.setName(employeeDTO.getName());
-            employee.setSalary(employeeDTO.getSalary());
-            log.info("Updated employee: {} with new details", employee.getName());
-            return employee;
-        });
+        EmployeeModel employee = getUserById(id); // Throws exception if not found
+        employee.setName(employeeDTO.getName());
+        employee.setSalary(employeeDTO.getSalary());
+        log.info("Updated employee: {} with new details", employee.getName());
+        return employee;
     }
 
     // Delete employee
-    public boolean deleteUser(Long id) {
+    public void deleteUser(Long id) {
         log.info("Deleting employee with ID: {}", id);
-        return employeeList.removeIf(employee -> employee.getId().equals(id));
+        EmployeeModel employee = getUserById(id); // Throws exception if not found
+        employeeList.remove(employee);
+        log.info("Employee with ID {} deleted successfully", id);
     }
 }
