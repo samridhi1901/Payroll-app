@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+
 @ToString
 public class EmployeeModel {
     @Id
@@ -18,10 +18,12 @@ public class EmployeeModel {
     private String name;
     private double salary;
 
-    public EmployeeModel(EmployeeDTO employeeDTO) {
-        this.name = employeeDTO.getName();
-        this.salary = employeeDTO.getSalary();
+    public EmployeeModel(Long id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
     }
+
 
     public Long getId() {  // ✅ Added this method
         return id;

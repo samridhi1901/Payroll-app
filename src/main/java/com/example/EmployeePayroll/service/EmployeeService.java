@@ -2,6 +2,8 @@ package com.example.EmployeePayroll.service;
 
 import com.example.EmployeePayroll.dto.EmployeeDTO;
 import com.example.EmployeePayroll.model.EmployeeModel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,39 +13,47 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 public class EmployeeService {
+    private static final Logger log = LoggerFactory.getLogger(EmployeeService.class);
 
     private final List<EmployeeModel> employeeList = new ArrayList<>();
-    private final AtomicLong idCounter = new AtomicLong(1);
+    private final AtomicLong idCounter = new AtomicLong(1); // Auto-increment ID
 
     // Get all employees
     public List<EmployeeModel> getAllUsers() {
-        return new ArrayList<>(employeeList);
+        log.info("Fetching all employees");
+        return employeeList;
     }
 
     // Get employee by ID
     public Optional<EmployeeModel> getUserById(Long id) {
-        return employeeList.stream().filter(emp -> emp.getId().equals(id)).findFirst();
+        log.info("Fetching employee with ID: {}", id);
+        return employeeList.stream()
+                .filter(employee -> employee.getId().equals(id))
+                .findFirst();
     }
 
-    // Create employee
+    // Create employee using DTO
     public EmployeeModel createUser(EmployeeDTO employeeDTO) {
-        EmployeeModel employee = new EmployeeModel(employeeDTO);
-        employee.setId(idCounter.getAndIncrement()); // Assign unique ID
+        EmployeeModel employee = new EmployeeModel(idCounter.getAndIncrement(), employeeDTO.getName(), employeeDTO.getSalary());
         employeeList.add(employee);
+        log.info("Created new employee: {} with ID: {}", employee.getName(), employee.getId());
         return employee;
     }
 
-    // Update employee
-    public Optional<EmployeeModel> updateUser(Long id, EmployeeDTO userDetails) {
+    // Update employee using DTO
+    public Optional<EmployeeModel> updateUser(Long id, EmployeeDTO employeeDTO) {
+        log.info("Updating employee with ID: {}", id);
         return getUserById(id).map(employee -> {
-            employee.setName(userDetails.getName());
-            employee.setSalary(userDetails.getSalary());
+            employee.setName(employeeDTO.getName());
+            employee.setSalary(employeeDTO.getSalary());
+            log.info("Updated employee: {} with new details", employee.getName());
             return employee;
         });
     }
 
     // Delete employee
     public boolean deleteUser(Long id) {
-        return employeeList.removeIf(emp -> emp.getId().equals(id));
+        log.info("Deleting employee with ID: {}", id);
+        return employeeList.removeIf(employee -> employee.getId().equals(id));
     }
 }
